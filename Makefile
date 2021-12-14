@@ -19,8 +19,8 @@ db_migrate:
 	go run cmd/bun/main.go -env=test db migrate
 
 test:
-	TZ= go test ./org
-	TZ= go test ./blog
+	TZ= go test -cover -race -v ./org
+	TZ= go test -cover -race -v ./blog
 
 api_test:
 	TZ= go run cmd/bun/main.go -env=test api &
