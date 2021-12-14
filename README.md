@@ -8,7 +8,7 @@
 This project implements RealWorld JSON API as specified in the
 [spec](https://github.com/gothinkster/realworld). It was created to demonstrate how to use:
 
-- [treemux HTTP router](https://github.com/vmihailenco/treemux).
+- [Bun Router](https://github.com/uptrace/bunrouter).
 - [Bun DB](https://github.com/uptrace/bun).
 - [bun/migrate](https://bun.uptrace.dev/guide/migrations.html).
 - [bun/dbfixture](https://bun.uptrace.dev/guide/fixtures.html).
