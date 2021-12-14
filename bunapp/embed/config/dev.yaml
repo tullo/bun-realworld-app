@@ -2,4 +2,4 @@ debug: true
 secret_key: 'JeFvgCrMuvkoAJjkHgyaMDxku'
 
 pgx:
-  dsn: postgres://postgres:@localhost:5432/realworld_dev?sslmode=disable
+  dsn: postgres://root:@localhost:26257/realworld_dev?sslmode=disable

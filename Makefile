@@ -1,6 +1,16 @@
+SHELL := /bin/bash -eo pipefail
+
+.DEFAULT_GOAL := db_reset
+
+clean:
+	@rm -rfv cockroach-data
+
+single-node-db: clean
+	@cockroach start-single-node --insecure --listen-addr=localhost
+
 db_reset:
-	sudo -u postgres psql -c "DROP DATABASE IF EXISTS realworld_test"
-	sudo -u postgres psql -c "CREATE DATABASE realworld_test"
+	cockroach sql --insecure -e "DROP DATABASE IF EXISTS realworld_test"
+	cockroach sql --insecure -e "CREATE DATABASE realworld_test"
 
 	make db_migrate
 

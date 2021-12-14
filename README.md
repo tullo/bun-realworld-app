@@ -30,6 +30,7 @@ The most interesting part for Bun users is probably [article filter](blog/articl
 
 Project comes with a `Makefile` that contains following recipes:
 
+- `make single-node-db` launches a single node crdb.
 - `make db_reset` drops existing database and creates a new one.
 - `make test` runs unit tests.
 - `make api_test` runs API tests provided by
