@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"net"
 	"net/http"
 	"os"
 	"strings"
@@ -71,7 +72,7 @@ var apiCommand = &cli.Command{
 			}
 		}()
 
-		fmt.Printf("listening on %s\n", srv.Addr)
+		fmt.Printf("Listening on http://%v%s/api/\n", preferredOutboundIP(), srv.Addr)
 		fmt.Println(bunapp.WaitExitSignal())
 
 		return srv.Shutdown(ctx)
@@ -279,4 +280,16 @@ func newDBCommand(migrations *migrate.Migrations) *cli.Command {
 
 func isServerClosed(err error) bool {
 	return err.Error() == "http: Server closed"
+}
+
+func preferredOutboundIP() net.IP {
+	conn, err := net.Dial("udp", "1.1.1.1:80")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer conn.Close()
+
+	localAddr := conn.LocalAddr().(*net.UDPAddr)
+
+	return localAddr.IP
 }
