@@ -1,4 +1,4 @@
-# Go treemux + bun realworld application
+# Bun realworld application
 
 [![build workflow](https://github.com/go-bun/bun-realworld-app/actions/workflows/build.yml/badge.svg)](https://github.com/go-bun/bun-realworld-app/actions)
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/uptrace/bun-realworld-app)](https://pkg.go.dev/github.com/uptrace/bun-realworld-app)
